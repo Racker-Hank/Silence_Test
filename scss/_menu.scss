@@ -1,0 +1,182 @@
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 1em;
+    flex: 1;
+    /* visibility: hidden; */
+
+    .menu-nav {
+        display: flex;
+        list-style: none;
+
+        &_item {
+            a {
+                color: $grey;
+                padding: 1em;
+                text-transform: uppercase;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 1.2em;
+
+                &:hover {
+                    color: $white;
+                    @include trans_fast;
+                }
+            }
+
+            &.active > a {
+                color: $orange;
+            }
+        } 
+
+
+    }
+}
+
+#logo {
+    padding: 1em;
+    opacity: 0;
+
+    // transition: all 0.3s linear;
+    @include trans_fast;
+
+    a {
+        color: $white;
+        font-family: 'Playfair Display', serif;
+        font-size: 1.3em;
+    }
+}
+
+.user {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+    margin-right: 1em;
+
+    &-nav {
+        display: flex;
+        list-style: none;
+        position: relative;
+        // transform: translate(0, 70px);
+
+        &_avatar {
+            padding: 1em;
+            // position: fixed;
+
+            .fa-user {
+                transform: scale(1.4);
+                color: $grey;
+                cursor: pointer;
+
+                @include trans_fast;
+                
+                &:hover {
+                    color: $white;
+                }
+            }
+
+            &_menu {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: $white;
+                position: absolute;
+                top: 3em;
+                // right: -1em;
+                left: -3.5em;
+                width: 10em;
+                padding: 0.5em 0.5em;
+                border-radius: 1em;
+                visibility: hidden;
+                opacity: 0;
+                // z-index: 10000;
+
+                @include trans_fast;
+
+                &.active {
+                    visibility: visible;
+                    opacity: 1;
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: -4px;
+                    right: 4.5em;
+                    width: 1em;
+                    height: 1em;
+                    transform: rotate(45deg);
+                    background: $white;
+                }
+
+                h3 {
+                    width: 100%;
+                    text-align: center;
+                    padding: 1em 0;
+                    color: $orange;
+                }
+
+                ul li {
+                    padding: 0.5em 0;
+                    border-top: 1px solid rgba(0, 0, 0, 0.1);
+                    display: flex;
+                    align-items: center;
+                    // justify-content: center;
+
+                    .fas {
+                        margin-right: 0.8em;
+                        opacity: 0.4;
+                        @include trans_fast;
+                    }
+
+                    
+                    a {
+                        display: inline-block;
+                        color: $grey;
+                    }
+
+                    &:hover {
+                        .fas {
+                            opacity: 1;
+                        }
+
+                        a {
+                            color: $purple;
+                        }
+                    }
+                }
+            }
+        }
+
+        &_cart {
+            padding: 1em;
+            position: relative;
+            display: flex;
+
+            .fa-shopping-cart {
+                transform: scale(1.4);
+                color: $grey;
+                @include trans_fast;
+                
+                &:hover {
+                    color: $white;
+                }
+            }
+
+            .items-number {
+                position: absolute;
+                top: 10%;
+                right: 10%;
+                background: #E08E45;
+                width: 35%;
+                height: 35%;
+                border-radius: 50%;
+                text-align: center;
+                color: $strong_white;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: .8em;
+            }
+
+        }
+    }
+}

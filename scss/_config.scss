@@ -1,0 +1,50 @@
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&display=swap');
+
+// var
+$orange: #E08E45;
+$black: #333533;
+$dark-black: #141414;
+$white: #EBEBEB;
+$strong_white: #E8F7EE;
+$purple: #7D80DA;
+$magenta : #802392;
+$grey: #575a57;
+
+body, html {
+    height: 100%;
+    background: #141414;
+}
+
+*, ::after, ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin trans_fast {
+    transition: all 0.25s linear;
+}
+
+@mixin trans_md {
+    transition: all 0.5s ease;
+}
+
+@mixin media-md {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin media-lg {
+    @media screen and (min-width: 1024px) {
+        @content;
+    }
+}
+@mixin media-xl {
+    @media screen and (min-width: 1600px) {
+        @content;
+    }
+}

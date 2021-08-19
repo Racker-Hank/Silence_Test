@@ -1,0 +1,261 @@
+.products {
+
+    header {
+        background: $dark-black;
+        #logo {
+            opacity: 1;
+        }
+    }
+
+    height: 100%;
+    width: 100%;
+
+    .video {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        height: 100vh;
+    }
+
+    .headphones {
+        padding: 2em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        // background: linear-gradient(to bottom, $orange, $purple);
+        background: $dark-black;
+
+        .category {
+
+        }
+
+        &_studio, &_workout, &_casual {
+            padding: 2em;
+            display: grid;
+            grid-gap: 2em;
+            grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+
+        }
+        &_items {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .headphones_img {
+                width: 100%;
+                object-fit: cover;
+                // z-index: 1;
+                padding: 1em;
+
+                @include trans_md;
+                transition: transform linear;
+
+                &:hover {
+                    transform: scale(0.9);
+                }
+            }
+        }
+
+        h2 {
+            color: #fff;
+        }
+    }
+
+    footer {
+        padding: 1em 2em;
+    }
+
+
+
+    // .showcase {
+    //     // background: url();
+    //     display: grid;
+    //     height: 50vh;
+    //     width: 100%;
+    //     grid-gap: 1em;
+    //     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    //     grid-auto-rows: 150%;
+    //     position: relative;
+    //     margin-bottom: 36vh;
+    //     padding: 0 2%;
+    
+    
+    //     h1 {
+    //         // padding-left: 10%;
+    //         display: inline;
+    //         width: 100%;
+    //         color: $strong_white;
+    //         z-index: 2;
+    //         font-size: 4.5em;
+    //         font-family: 'Space Grotesk', sans-serif;
+    //         transform: translateY(40%);
+    
+    //     }
+    
+    //     .headphones {
+    //         display: flex;
+    //         flex-direction: column;
+    //         align-items: center;
+    //         justify-content: space-evenly;
+    //         overflow: hidden;
+    //         height: fit-content;
+    //         // border: 5px solid red;
+    //         transform: translateY(3em);
+
+    //         &.studio {
+    //             &::before {
+    //                 // background: red;
+    //                 content: '';
+    //                 position: absolute;
+    //                 // border: 5px solid #;
+    //                 top: 0;
+    //                 left: 0;
+    //                 width: 100%;
+    //                 height: 0;
+    //                 opacity: 1;
+    //                 border-radius: 2em;
+
+    //                 @include trans_md;
+    //             }
+    //             &:hover {
+    //                 &::before {
+    //                     height: 100%;
+    //                     background: #67b5c7;
+    //                 }
+    //                 .headphones_img {
+    //                     transform: scale(0.9);
+    //                 }
+    //                 .browse-btn {
+    //                     transform: translateY(-1em);
+    //                 }
+    //             }
+    //         }
+
+    //         &.workout {
+    //             &::before {
+    //                 // background: red;
+    //                 content: '';
+    //                 position: absolute;
+    //                 // border: 5px solid #;
+    //                 top: 0;
+    //                 left: 0;
+    //                 width: 100%;
+    //                 height: 0;
+    //                 opacity: 1;
+    //                 border-radius: 2em;
+
+    //                 @include trans_md;
+    //             }
+    //             &:hover {
+    //                 &::before {
+    //                     height: 100%;
+    //                     background: #d3cece;
+    //                 }
+    //                 .headphones_img {
+    //                     transform: scale(0.9);
+    //                 }
+    //                 .browse-btn {
+    //                     transform: translateY(-1em);
+    //                 }
+    //             }
+    //         }
+
+    //         &.casual {
+    //             &::before {
+    //                 // background: red;
+    //                 content: '';
+    //                 position: absolute;
+    //                 // border: 5px solid #;
+    //                 top: 0;
+    //                 left: 0;
+    //                 width: 100%;
+    //                 height: 0;
+    //                 opacity: 1;
+    //                 border-radius: 2em;
+
+    //                 @include trans_md;
+    //             }
+    //             &:hover {
+    //                 &::before {
+    //                     height: 100%;
+    //                     background: #ebe8e8;
+    //                 }
+    //                 .headphones_img {
+    //                     transform: scale(0.9);
+    //                 }
+    //                 .browse-btn {
+    //                     transform: translateY(-1em);
+    //                 }
+    //             }
+    //         }
+
+    //         .description {
+    //             color: $orange;
+    //             font-family: 'Space Grotesk', sans-serif;
+    //             font-size: 2em;
+    //             z-index: 1;
+    //         }
+            
+    //         .headphones_img {
+    //             width: 80%;
+    //             margin-bottom: 1em;
+    //             z-index: 1;
+    //             @include trans_md;
+    //         }
+
+    //         .browse-btn {
+    //             @include trans_fast;
+
+    //             &_text {
+    //                 width: fit-content;
+    //                 padding: 0.7em 2em;
+    //                 background: $white;
+    //                 position: relative;
+    //                 overflow: hidden;
+    //                 font-family: 'Noto Sans KR', sans-serif;
+    //                 font-weight: 900;
+    //                 font-size: 1.2em;
+    //                 text-transform: uppercase;
+    //                 color: $purple;
+    //                 border-radius: 4em;
+
+    //                 &_overlay {
+    //                     position: absolute;
+    //                     background-color: #8675e95f;
+    //                     top: 0;
+    //                     width: 100%;
+    //                     padding: 10px;
+    //                     left: -270px;
+    //                     margin-left: 500px;
+    //                     bottom: 0;
+    //                     transition: left 500ms linear, margin-left 300ms ease-out;
+    //                 }
+    //             }
+                
+    //             &:hover {
+    //                 .browse-btn_text_overlay {
+    //                     left: 0;
+    //                     margin-left: 0;
+    //                     transition: left 300ms ease-out;
+    //                 }
+    //             }
+                
+    //             &:hover {
+    //                 .browse-btn_text {
+    //                     color: #141414;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+    
+}
+    
+    
+    
